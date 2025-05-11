@@ -3,15 +3,17 @@
 #include <cstdlib>
 #include <iostream>
 #include <fstream>
+#include <string>
+#include <string_view>
 
 consteval const char* post_url() {
     return "http://testphp.vulnweb.com/userinfo.php";
 }
 
 // Post HTML request to login to testphp.vulnweb.com
-cpr::Response post_request() {
+cpr::Response post_request(std::string_view url) {
     cpr::Session session;
-    session.SetUrl(cpr::Url{ post_url() });
+    session.SetUrl(cpr::Url{ std::string(url) });
     session.SetPayload({ {"uname", "test"}, {"pass", "test"} });
     return session.Post();
 }
@@ -35,12 +37,14 @@ void open_in_browser(const std::string& filename) {
     system(("open " + filename).c_str());
 #elif __linux__
     system(("xdg-open " + filename).c_str());
+#else
+    std::cerr << "Unsupported platform." << std::endl;
 #endif
 }
 
 int main() {
     try {
-        const auto r = post_request();
+        const auto r = post_request(post_url());
         std::cout << "Status Code: " << r.status_code << std::endl;
 
         const std::string filename{ "response.html" };
