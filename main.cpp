@@ -14,7 +14,6 @@ int main() {
 
     // Print to the console
     std::cout << "Status Code: " << r.status_code << std::endl;
-    std::cout << "Response text: " << r.text.substr(100) << std::endl;
 
     // Write the HTML to a file
     const std::string filename{ "response.html" };
