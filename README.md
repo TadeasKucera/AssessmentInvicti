@@ -1,6 +1,6 @@
 # Login Simulation (C++)
 
-This C++ project is my homework for Invicti job interview. The aim is to simulate a login via HTTP POST request to [http://testphp.vulnweb.com/login.php](http://testphp.vulnweb.com/login.php). I selected the [CPR](https://github.com/libcpr/cpr) library for this purpose.
+This C++ project is a little HTTP request exercise. The aim is to simulate a login via HTTP POST request to [http://testphp.vulnweb.com/login.php](http://testphp.vulnweb.com/login.php). I selected the [CPR](https://github.com/libcpr/cpr) library for this purpose.
 
 ## Project Structure
 
