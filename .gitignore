@@ -8,6 +8,9 @@ out/*
 # Assignment pdf
 *.pdf
 
+# HTML files
+*.html
+
 # Prerequisites
 *.d
 
