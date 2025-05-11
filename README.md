@@ -9,7 +9,7 @@ This C++ project is my homework for Invicti job interview. The aim is to simulat
 
 ## Requirements
 
-- A C++17 compatible compiler
+- A C++20 compatible compiler
 - [CPR library](https://github.com/libcpr/cpr) installed
 - [CMake](https://cmake.org/) 3.10 or newer
 

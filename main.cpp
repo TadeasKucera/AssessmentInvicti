@@ -4,9 +4,13 @@
 #include <iostream>
 #include <fstream>
 
+consteval const char* post_url() {
+    return "http://testphp.vulnweb.com/userinfo.php";
+}
+
 int main() {
     cpr::Session session;
-    session.SetUrl(cpr::Url{ "http://testphp.vulnweb.com/userinfo.php" });
+    session.SetUrl(cpr::Url{ post_url()});
     session.SetPayload({ {"uname", "test"}, {"pass", "test"} });
 
     // Post HTML request
@@ -29,6 +33,4 @@ int main() {
 #elif __linux__
     system(("xdg-open " + filename).c_str());
 #endif
-
-    return 0;
 }
